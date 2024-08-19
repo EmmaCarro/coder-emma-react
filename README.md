@@ -1,2 +1,1 @@
-# coder-emma-react
-Repositorio del curso de ReactJS de coderhouse
+Proyecto ReactJS de coderhouse
