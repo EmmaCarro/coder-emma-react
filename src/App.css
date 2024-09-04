@@ -1,41 +1,57 @@
-/* Titulo */
+/* Titulo de la pagina, dentro de la navbar*/
 .titulo {
-    background-color: #ffe082;
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Icono de la navbar que te envia al home */
+.navicon {
+    scale: 200%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor general de toda la navbar */
+.nav-container {
+    background-color: #f3c623;
     padding: 1.5% 1%;
 }
 
-/* Contenedor de la navbar*/
-.nav-container {
-    background-color: #f3c623;
-    padding: 10px 20px;
+/* Secciones de la navbar: general, left, center, right */
+.navbar {
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.navbar-center {
+    display: flex;
     justify-content: center;
+    align-items: center;
+    flex: 1;
 }
 
-/* Navbar */
-.navbar-custom {
-    background-color: #f3c623;
-    max-width: 100%;
-}
-
-/* "ul" del navbar */
+/* Navbar ul, lista de items*/
 .navbar-nav {
     display: flex;
-    position: sticky;
     align-items: center;
-    padding: 10px 10px;
-    margin: auto 0; 
     list-style: none;
-    max-width: 100%;
+    padding: 0;
+    margin: 0; 
 }
 
-/* "li" de la "ul" del navbar */
+/* Navbar li, items de la lista */
 .nav-item {
     margin: 0 15px;
 }
 
-/* "a" de los "li" de la barra */
+/* Navbar links, link de cada item */
 .nav-link {
     color: #4e342e;
     font-weight: bold;
@@ -49,6 +65,7 @@
     font-weight: 400;
 }
 
+/* Efecto de botones de la navbar */
 .nav-link:hover {
     color: #ffffff;
     background-color: #ffa000;
@@ -58,17 +75,14 @@
 .cart-widget {
     position: relative;
     display: flex;
-    align-items: left;
-    justify-content: space-between;
-}
-
-.cart-widget img {
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 3%;    
     width: 2rem;
     height: auto;
 }
 
 .cart-widget p {
-    position: absolute;
     top: -10px;
     right: -10px;
     background-color: #ff3d00;
@@ -79,7 +93,12 @@
     border-radius: 50%;
 }
 
-/* ItemListContainer */
+/* Icono del carrito, para el tamaño */
+.Cart {
+    font-size: 22px;
+}
+
+/* ItemListContainer, listado de productos */
 .item-list-container {
     background-color: #ffe0b2;
     border: 2px solid #ffb74d;
@@ -91,4 +110,59 @@
 
 .item-list-container h3 {
     color: #6d4c41;
+}
+
+/* Logo de la pagina de bienvenida */
+.logo {
+    scale: 500%;
+    color: #f3c623;
+    margin: 50px;
+}
+
+/* Fixeo del footer para no cortar la pagina*/
+.footer {
+    height: 60px;
+}
+.cover-container {
+    padding-bottom: 160px;
+}
+
+/* Fixeo de las card images para que no se deforme la card */
+.card-header {
+    width: 100%;
+    min-height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+.card-img-top {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Fixeo de tamaño de las cards*/
+.card {
+    min-height: 500px;
+    max-height: 500px;
+    width: 100%;
+}
+
+/* Fixeo de la altura de las cards para el crop del texto*/
+.card-text-length {
+    height: 70px;
+    max-width: 100%;
+}
+.card-text {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* Fixeo para que las cards no cambien de tamaño por el titulo wrappeando*/
+.card-body {
+    width: 18rem;
+}
+.card-title {
+    font-size: calc(1rem + 1vw);
 }
