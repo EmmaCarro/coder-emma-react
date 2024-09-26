@@ -1,29 +1,46 @@
-import {useState, useEffect} from "react";
-import {getProducts, getProductsByCategory} from "../../asyncMock";
-import ItemList from "../ItemList/ItemList";
+import React, {useEffect, useState} from "react";
+import ItemList from "./ItemList";
+import "./styles.css";
 import {useParams} from "react-router-dom";
+import { getDocs, collection, getFirestore, query, where } from "firebase/firestore";
 
-const ItemListContainer = ({greeting}) => {
-    const [products, setProducts] = useState([])
+const ItemListContainer = () => {
+    
+    // Inicializa el estado para almacenar productos en un array
+    const [products, setProducts] = useState([])  
+
+    // Obtengo el categoryId para los params
     const {categoryId} = useParams()
 
     useEffect(() => {
-        const asyncFunc = categoryId ? getProductsByCategory : getProducts
-        asyncFunc (categoryId)
-            .then(response => {
-                setProducts(response)
+
+        //inicio firestore
+        const db = getFirestore()
+
+        //busco en la coleccion "items" del firestore
+        const itemCollection = collection(db, "items")
+
+        // Con esto filtro por categorias y genero la consulta de categoria
+        const itemQuery = categoryId
+            ? query(itemCollection, where("category", "==", categoryId))
+            : itemCollection;
+    
+        // Obtengo los documentos de la consulta anterior
+        getDocs(itemQuery)
+
+            // Si todo sale bien
+            .then((snapshot) => {
+
+                // Mapeo los documentos y los convierto en un array de items
+                const items = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+                setProducts(items); // Actualiza el estado con los items obtenidos
             })
-            .catch(error => {
-                console.error(error)
-            })
-    }, [categoryId])
+            .catch((error) => console.error("Error al fetchear items:", error));
+    }, [categoryId]); // Ejecuta el efecto cuando categoryId cambia
 
     return (
-        <div className="album align-items-center justify-content-center">
-            <h1 className="mb-5">{greeting}</h1>
-            <div>
-                <ItemList products={products} />
-            </div>
+        <div className="album align-items-center justify-content-center px-5">
+            <ItemList items={products} />
         </div>
     )
 }

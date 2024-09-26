@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 function Error(){
     return(
@@ -6,7 +6,7 @@ function Error(){
             <main className="px-3">
                 <h1 className="mt-5">ERROR 404</h1>
                 <p className="lead m-3">Página no encontrada</p>
-                <Link className="nav-item btn btn-lg btn-secondary fw-bold border-black mt-5" to="/">Volver</Link>
+                <NavLink className="nav-item btn btn-lg btn-secondary fw-bold border-black mt-5" to="/">Volver</NavLink>
             </main>
         </div>
     )

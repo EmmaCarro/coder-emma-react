@@ -1,0 +1,36 @@
+.counter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.counter-container button {
+    background-color: #ffa000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.counter-container button:hover {
+    background-color: #ff8f00;
+}
+
+.add-to-cart {
+    background-color: #4CAF50;
+}
+
+.add-to-cart:hover {
+    background-color: #45a049;
+}
+
+.counter-container span {
+    font-size: 1.5rem;
+    padding: 0 15px;
+    min-width: 30px;
+    text-align: center;
+}

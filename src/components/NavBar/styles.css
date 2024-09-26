@@ -1,0 +1,96 @@
+/* Contenedor general de toda la navbar */
+.nav-container {
+    background-color: #f3c623;
+    padding: 1.5% 1%;
+    width: 100%;
+}
+
+/* Seccion de la navbar: general(navbar) */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Parte izquierda de la navbar, con su icono de perrito */
+.navicon {
+    scale: 200%;
+    justify-content: center;
+    align-items: center;
+}
+.navbar-left {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+/* Parte central de la navbar (los links) */
+.navbar-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+/* Navbar ul, lista de items*/
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0; 
+}
+/* Navbar li, items de la lista */
+.nav-item {
+    margin: 0 15px;
+}
+/* Navbar links, link de cada item */
+.nav-link {
+    color: #4e342e;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 2px;
+    background-color: #ffe082;
+    transition: background-color 0.3s ease;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+}
+/* Efecto de botones de la navbar */
+.nav-link:hover {
+    color: #ffffff;
+    background-color: #ffa000;
+    border-radius: 10px;
+}
+.nav-link.active {
+    color: #ffffff;
+    background-color: #ffa000;
+    border-radius: 10px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+/* CartWidget, el carrito de compras del navbar */
+.cart-widget {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 3%;    
+    width: 2rem;
+    height: auto;
+}
+.cart-widget span {
+    top: -10px;
+    right: -10px;
+    background-color: #ff3d00;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+/* Icono del carrito, para el tamaño */
+.cart-icon {
+    font-size: 22px;
+}
