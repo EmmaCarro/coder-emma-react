@@ -3,7 +3,7 @@
 ## Descripcion
 SchnauZaar es un proyecto de pagina e-commerce de venta de articulos de mascotas.
 
-## Installacion
+## Instalacion
 1. Clonar el repositorio:
    ```bash
    git clone https://github.com/EmmaCarro/coder-emma-react.git
